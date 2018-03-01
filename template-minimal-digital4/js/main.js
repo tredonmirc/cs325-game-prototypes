@@ -247,7 +247,6 @@ function endGame() {
 // Set text and notify of win- destroy all the chickens
 function winGame() {
 
-    timer.stop();
     endGameText = game.add.text(game.world.centerX, game.world.centerY, "YOU WIN!!!!", {
         font: "100px Arial",
         fill: "#26c12f",
