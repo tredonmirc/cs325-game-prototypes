@@ -36,7 +36,7 @@ function create() {
 
     time = this.game.time.totalElapsedSeconds();
     music = game.add.audio('background');
-    //music.play(); 
+    music.play(); 
 
     fx = game.add.audio('sfx');
     fx.allowMultiple = true;
