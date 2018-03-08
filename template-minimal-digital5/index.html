@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Peace and Pirate</title>
+    <script src="js/phaser.js"></script>
+    <script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Peace and Pirate</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+  The original aspect comes from not actively being able to manipulate the environment (i.e. no weapons, collisions, etc)
+</li>
+
+<li><strong>Technical Merit:</strong>
+  I was interested in playing with method definitions as an "object" like I saw in another example.
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+What did you learn from this prototype? <b>I learn about creating anles between sprites (quite easy actually) </b>
+What was the easiest or hardest part of making it? <b> Hardest part was making the sprites I wanted to interact with the environment.  The idea was supposed to be to have sandbars to slow the pirates but I couldn't get that AND the methoid definition of the "pirates" to work.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+<ul>
+    <li>ships images : image from: https://opengameart.org/content/black-sail-ship-bleeds-game-art (self modified)</li>
+    <li>cannon balls : image from: https://www.spriters-resource.com/update-351/</li>
+    <li>ocean background: image from: http://bit.ly/2HcVngc</li>
+    <li>cannon : image from: http://img.freepik.com/vettori-gratuito/varieta-di-oggetti-pirata-in-disegno-piatto_23-2147623944.jpg?size=338&ext=jpg (self modified)</li>
+    <li>explosion animation from : https://phaser.io/examples/v2/games/tanks</li>
+    <li>sandbar (wasn't shown as submitted) : image from: http://dullahansoft.com/pixel/?m=201405</li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+  Strong reuse of the tank example: https://phaser.io/examples/v2/games/tanks
+</li>
+
+<li><strong>High Concept:</strong>
+  Navigate the seas with your arrows and make your enemies destroy eachother!
+</li>
+
+<li><strong>Theme:</strong>
+  PIRATES!!! ARGH
+</li>
+
+<li><strong>Mandated Variety:</strong>
+Input: Keyboard
+Randomness: Ship placement
+Genre: Shooter, with a twist
+</li>
+
+<ul><strong>Prototype Goal:</strong>
+  <li>The first was a passive game mechanic.  With only movement, can I make a combat based game? </li>
+  <li> The second was randomization of sprite spawning locations (I'm not happy with the game.world.randomX effect, but even using Math.Random() I had issues getting what seems like a truely random spawn.)</li>
+  <li>  The third was environmental interaction but I was unable to get this working correctly - will try again on the iteration.</li>
+</ul>
+
+<li><strong>Player Experience Goals:</strong>
+  Enjoy being invlunerable while still wrecking "havok"
+</li>
+
+<li><strong>Gameplay:</strong>
+  The gameplay is simple - the player is to use his invulnerability and speed to cause other pirate ships to damage and destroy eachother.
+</li>
+
+<li><strong>Strategies:</strong>
+  Because the player cannot interact with the pirates directly, I susggest staying near other pirate ships to help speed up the destruction of others (cannons are only shot in a certain proximity to a pirate ship).
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+  You're glory days of pirating are over - you have passed on and now are just looking for peace and quite.  But all the pirates you wronged in your life are now out to get you.  Though you can't be hurt, you can't hurt them either.  Can you get the peace and quiet you deserve?
+</li>
+
+<li><strong>Target Audience:</strong>
+  Pirate enthusiasts and bored students
+</li>
+
+<li><strong>Play Time:</strong>
+  0-3 minutes
+</li>
+
+</ul>
+
+</div>
+</body>
+</html>
