@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Dog Walker - Iteration 1</title>
+    <script src="js/phaser.js"></script>
+    <script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Dog Walker</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+  Originality points for a boardgame structure in Phaser, where scrollers are the norm.  Original Tilemap created with Tiled and Imported via json.  Also, this game has a unique point structure and I had to build an point array to update with the characters movement.  Collision maping off the tileset was new for me as well.
+</li>
+
+<li><strong>Technical Merit:</strong>
+<ul>
+  <li>Tilemap generated in Tiled</li>
+  <li>Collision is based on the tilemap</li>
+  <li>Point array to register updates to the character</li>
+</ul>
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+  <li>Things learned</li>
+  <ul>
+    <li>How to make a tilemap</li>
+    <li>How to track user move in a "tile" environment</li>
+    <li>How to build collision off a tilemap</li>
+    <li>How to create my on spritesheet</li>
+  </ul>
+  <li>Easiest or hardest thing</li>
+  <ul>
+    <li>Absolutely the hardest thing was the collision map between the tilemap and the character - it plagued me for hours</li>
+    <li>Another challenge was importing the tilemap from Tiled to Phaser</li>
+  </ul>
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+<ul>
+  <li class="c5"><span>Colored grass - &nbsp;</span><span class="c3"><a class="c4" href="https://www.google.com/url?q=https://forums.rpgmakerweb.com/index.php?threads/whtdragons-tilesets-addons-fixes-and-more.60504/&amp;sa=D&amp;ust=1522956488584000">https://forums.rpgmakerweb.com/index.php?threads/whtdragons-tilesets-addons-fixes-and-more.60504/</a></span></li><li class="c5"><span>Ground &amp; Dogs &amp; Cats, Chairs - </span><span class="c3"><a class="c4" href="https://www.google.com/url?q=https://forums.rpgmakerweb.com/index.php?threads/whtdragons-tilesets-addons-fixes-and-more.60504/&amp;sa=D&amp;ust=1522956488585000">https://forums.rpgmakerweb.com/index.php?threads/whtdragons-tilesets-addons-fixes-and-more.60504/</a></span></li><li class="c5"><span>Alternate Dogs (dark) - </span><span class="c3"><a class="c4" href="https://www.google.com/url?q=https://vxresource.files.wordpress.com/2010/02/gallery_6129_38_17945.png&amp;sa=D&amp;ust=1522956488585000">https://vxresource.files.wordpress.com/2010/02/gallery_6129_38_17945.png</a></span></li><li class="c5"><span>Animals - </span><span class="c3"><a class="c4" href="https://www.google.com/url?q=https://www.pinterest.com/pin/471259548485475327/&amp;sa=D&amp;ust=1522956488586000">https://www.pinterest.com/pin/471259548485475327/</a></span></li><li class="c5"><span>Person - </span><span class="c3"><a class="c4" href="https://www.google.com/url?q=http://momope8.blog67.fc2.com/blog-entry-321.html?sp&amp;sa=D&amp;ust=1522956488586000">http://momope8.blog67.fc2.com/blog-entry-321.html?sp</a></span></li><li class="c5"><span>BoxBack.png &amp; Ok.png - </span><span class="c3"><a class="c4" href="https://www.google.com/url?q=https://phasergames.com/phaser/examples/messageBox/&amp;sa=D&amp;ust=1522956488587000">https://phasergames.com/phaser/examples/messageBox/</a></span></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+  Although I did watch a couple tutorials, I did not base my protoype on any other Phaser template - this took a while to hash out piece by piece.
+  The message box code was pulled from "https://phasergames.com/adding-message-box-phaser-games/"
+</li>
+
+<li><strong>High Concept:</strong>
+  You're a dog walker - meet the dogs needs and return a hero or lost the "business" forever!
+</li>
+
+<li><strong>Theme:</strong>
+  The concept for this game was derived from real life and aims to model challenges dog walkers face.
+</li>
+
+<li><strong>Mandated Variety:</strong>
+State which input, randomness, genre, and play style you used in this prototype.
+<ul>
+<li>Input: Keyboard</li>
+<li>Randomness: Dog is chosen by random - variety difficulty</li>
+<li>Genre: Roleplaying,  Life simulation</li>
+</ul>
+</li>
+
+<li><strong>Prototype Goal:</strong>
+  The mechanic this prototype is evaluating is how best to model real life events.  Specifically, its attempting to model turn-based playstyle in non turn-based movement.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+  Players will hopefully enjoy the variation of dog walking challenges and the rewarding (or lack thereof) commentary at the end.  Dog status HAS been included to facilitate players until a better indicator mechanism can be provided.
+</li>
+
+<li><strong>Gameplay:</strong>
+  <p>
+  Gameplay here is pretty simple.  The user is provided a dog to walk, and the dog has three core needs that revolve around Energy, Aggressiveness and Potty needs.  The user then must attempt to optimally find a path the satisfy the needs while not over stimulating the dog.  The closer to exactly what the dog requires the user gets, the better they perform.  The coremechanic is simply walking around the path provided on the board game.  However, the challeng will be to find an optimal path.  
+</li>
+
+<li><strong>Strategies:</strong>
+  <p>Determine what the dog needs, and find the best starting point to facilitate your best "walk"</p>
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+  Simple backstory: Lots of people walk dogs all the time.  How good are they at guessing their dogs needs?  Dramatic tensions are minimal here, other than the irritation that might ensue at not satisfying your dogs needs.
+</li>
+
+<li><strong>Target Audience:</strong>
+  None/All.
+</li>
+
+<li><strong>Play Time:</strong>
+  Variable.  < 5 seconds to 5+ minutes
+</li>
+
+</ul>
+
+</div>
+</body>
+</html>

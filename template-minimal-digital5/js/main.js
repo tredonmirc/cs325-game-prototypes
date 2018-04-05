@@ -203,8 +203,8 @@ function create () {
     //  Create some baddies to waste :)
     enemies = [];
 
-    enemiesTotal = 20;
-    enemiesAlive = 20;
+    enemiesTotal = 2;
+    enemiesAlive = 2;
 
     for (var i = 0; i < enemiesTotal; i++)
     {
@@ -253,6 +253,8 @@ function create () {
     game.camera.focusOnXY(0, 0);
 
     cursors = game.input.keyboard.createCursorKeys();
+
+    game.input.keyboard.addKeyCapture([Phaser.Keyboard.SPACEBAR]);
 
 }
 
@@ -329,6 +331,9 @@ function update () {
     if (gameWon) {
         endGameText.x = tank.x;
         endGameText.y = tank.y;
+        if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
+            game.state.start('Play');
+        }
     }
 
 }
