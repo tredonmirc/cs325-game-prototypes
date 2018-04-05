@@ -324,13 +324,13 @@ function update_totals() {
         total = Math.abs(curr_lvls[0])+Math.abs(curr_lvls[1])+Math.abs(curr_lvls[2]);
         if (total == 0) 
             msg = "Holy Toledo Man!  Stop playing this game and start a business!!! You got a PERFECT score!!!";
-        if (total > 0 && total < 3) {
+        if (total > 0 && total < 5) {
             msg = "Not bad man, not bad.  The dog is happy and you looking like a rock start";
         }
-        if (total >= 3 && total < 9) {
+        if (total >= 5 && total < 10) {
             msg = "Not great.  I mean, the dog is SORTA happy you came, but there's a chance you don't get the business again";
         }
-        if (total >= 9) {
+        if (total >= 11) {
             msg = "Good grief man - the dog is simultaneously eating the couch while making friends with the mouse and deficating on the floor.  Feels bad man!!!";
         }
         showMessageBox("You're back!  Let's see how you did...\n\n\n"+msg,game.width * .7, game.height *.6);
