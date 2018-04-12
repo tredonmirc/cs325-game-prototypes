@@ -347,6 +347,7 @@ function showMessageBox(text, w = game_width, h = game_height, type=1,stars=fals
     }
 
 function restart() {
+    music.stop();
     this.game.state.restart();
 }
 
@@ -422,7 +423,7 @@ function update_totals() {
     if (tiles_moved != 0) {
        if (moved && curr_tile == starting_tile) {
         endMusic();
-        game_started = false;
+        //game_started = false;
         total = Math.abs(curr_lvls[0])+Math.abs(curr_lvls[1])+Math.abs(curr_lvls[2]);
         if (total == 0) 
             msg = "Holy Toledo Man!  Stop playing this game and start a business!!! You got a PERFECT score!!!";
