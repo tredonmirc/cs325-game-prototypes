@@ -87,7 +87,7 @@ function create() {
     valid_tiles = [
         0,1,2,3,4,5,6,7,11,
         22,23,24,29,30,31,32,33,34,35,36,37,38,39,
-        44,46,47,48,51,53,56,
+        44,46,47,48,51,53,56,59,
         66,67,70,71,74,75,76,80,81,
         89,90,92,94,96,103,107,
         111,114,115,116,118,125,126,127,128,129,130,
@@ -95,9 +95,9 @@ function create() {
         155,156,160,161,162,163,164,170,174,
         177,182,184,186,189,192,196,
         199,200,203,204,208,209,210,211,212,213,214,215,216,217,218,219,
-        221,225,232,234,236,239,
+        221,225,232,234,236,238,241,
         243,244,245,246,247,254,260,262,263,
-        265,274,275,276,281,285,
+        265,274,275,276,282,285,
         287,296,303,304,306,307,
         309,310,318,326,329,
         331,333,335,338,340,343,345,348,351,
@@ -571,41 +571,37 @@ function update() {
     if (!onMoveCD() ) {
         if (cursors.left.isDown)
         {
-            new_x = player.body.x-48;
-            y = player.body.y;
-            if (valid_tiles.hasOwnProperty(getNextTile(new_x,y))) {
-                player.body.x = new_x;
+            new_x = -48;
+            if (valid_tiles.includes(getNextTile(new_x,0))) {
+                player.body.x += new_x;
                 //player.body.velocity.x = -100;
                 moved();
             }
         }
         else if (cursors.right.isDown)
         {
-            new_x = player.body.x+48;
-            y = player.body.y;
-            if (valid_tiles.hasOwnProperty(getNextTile(new_x,y))) {
+            new_x = 48;
+            if (valid_tiles.includes(getNextTile(new_x,0))) {
                 //player.body.velocity.x = 100;
-                player.body.x = new_x;
+                player.body.x += new_x;
                 moved();
             }
         }
         else if (cursors.up.isDown)
         {
-            new_y = player.body.y-48;
-            x = player.body.x;
-            if (valid_tiles.hasOwnProperty(getNextTile(x,new_y))) {
+            new_y = -48;
+            if (valid_tiles.includes(getNextTile(0,new_y))) {
                 //player.body.velocity.y = -100;
-                player.body.y = new_y;
+                player.body.y += new_y;
                 moved();
             }
         }
         else if (cursors.down.isDown)
         {
-            new_y = player.body.y+48;
-            x = player.body.x;
-            if (valid_tiles.hasOwnProperty(getNextTile(x,new_y))) {
+            new_y = 48;
+            if (valid_tiles.includes(getNextTile(0,new_y))) {
                 //player.body.velocity.y = 100;
-                player.body.y = new_y;
+                player.body.y += new_y;
                 moved();
             }
         }
