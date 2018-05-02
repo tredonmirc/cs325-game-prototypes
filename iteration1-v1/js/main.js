@@ -5,7 +5,7 @@ function preload() {
 
     game.load.tilemap('map', 'assets/iteration-1-w-custome-tile.json', null, Phaser.Tilemap.TILED_JSON);
     game.load.image('tiles', 'assets/custom_tile.png');
-    game.load.image('player', 'assets/dog.png')
+    game.load.image('player', 'assets/dog_with_back.png');
     game.load.image('boxBack','assets/boxBack.png');
     game.load.image('closeButton', 'assets/closeButton.png');
     game.load.image('northButton','assets/north_button.png');
@@ -29,14 +29,14 @@ function create() {
 
      //Dog array - Values are: [Energy, Aggression, Tank size]
      dogs = [
-         [[-8,-8,4], "Your dog appears to be friendly, lazy, and is not whining( doesn't need to go too badly"],
-         [[-8,-8,8], "Your dog appears to be friendly, lazy, and is whining( needs to go too badly"],
+         [[-8,-8,4], "Your dog appears to be aggressive, lazy, and is not whining( doesn't need to go too badly"],
+         [[-8,-8,8], "Your dog appears to be aggressive, lazy, and is whining( needs to go too badly"],
          [[-8,8,4], "Your dog appears to be aggressive, lazy, and is not whining( doesn't needs to go too badly"],
-         [[-8,8,8], "Your dog appears to be friendly, energetic, and is not whining( needs to go badly"],
-         [[8,-8,4], "Your dog appears to be aggresive, lazy, and is not whining( doesn't need to go too badly"],
+         [[-8,8,8], "Your dog appears to be aggressive, energetic, and is not whining( needs to go badly"],
+         [[8,-8,4], "Your dog appears to be friendly, lazy, and is not whining( doesn't need to go too badly"],
          [[8,-8,8], "Your dog appears to be friendly, lazy, and is not whining( doesn't need to go too badly"],
-         [[8,8,4], "Your dog appears to be aggresive, energetic, and is not whining( doesn't need to go too badly"],
-         [[8,8,8], "Your dog appears to be aggresive, energetic, and is whining( needs to go badly"],
+         [[8,8,4], "Your dog appears to be friendly, energetic, and is not whining( doesn't need to go too badly"],
+         [[8,8,8], "Your dog appears to be friendly, energetic, and is whining( needs to go badly"],
      ]
 
      //Board point sytem.  Array values [Energy, Aggression, Tank remaining]
@@ -103,7 +103,7 @@ function create() {
     player = game.add.sprite(1,1, 'player', 1);
     game.physics.enable(player, Phaser.Physics.ARCADE);
     player.body.collideWorldBounds = true;
-    player.body.setSize(28,28);
+    player.body.setSize(5,5);
     //player.anchor.setTo(.5);
 
     //player.debug = true;
