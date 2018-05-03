@@ -44,7 +44,7 @@ var movesRemaining = 0;
 var currentPlayer;
 var turnInfo;
 var helpInfo;
-var debug = true;
+var debug = false;
 var roll;
 var alert;
 var timeCheck;
