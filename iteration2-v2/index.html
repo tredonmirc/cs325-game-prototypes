@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Dog Walker - Iteration 2</title>
+    <title>Friday Night - Iteration 2</title>
     <script src="js/phaser.js"></script>
     <script src="js/main.js"></script>
 
@@ -22,59 +22,48 @@ body
 <body>
 <div id="game"></div>
 <div id="readme">
-<h2>Dog Walker</h2>
+<h2>Friday Night</h2>
 
 
 <ul>
   <li><strong>Iteration updates:</strong>
-    Mostly quality of life updates. Updated player (dog) sprite to more easily fit throught pathways.  Updated buttons in text box with padding.  Added restart button for user happiness.  Added starting location icon when starting location is chosen.  Added music.  Updated scoring mechanism (was bugged and not updating the score correctly).  Add visual representation of end game status (0-3 stars for horrible - perfect).  Added an element of urgency - the slower the player goes the more the dog's "tank" will fill lessening the likelihood of a good score.
+    This the first and second iteration, so this includes all updates.  Custom tilemap of 48px units provides for perfect character movement with no collision "snags" like the first game.  
 <li><strong>Originality:</strong>
-  Originality points for a boardgame structure in Phaser, where scrollers are the norm.  Original Tilemap created with Tiled and Imported via json.  Also, this game has a unique point structure and I had to build an point array to update with the characters movement.  Collision maping off the tileset was new for me as well.
-</li>
+  Originality points for a boardgame structure in Phaser, where scrollers are the norm - this one is a complete evolution over the first attempt with no collision issues.  Original Tilemap created with Tiled and Imported via json - complete alteration to the last with MUCH larger sets and attention to details.  Unique swap mechanic to add complexity to the board game and goal attainment.</li>
 
 <li><strong>Technical Merit:</strong>
 <ul>
   <li>Tilemap generated in Tiled</li>
-  <li>Collision is based on the tilemap</li>
+  <li>Permissible movement tiles comes from map array</li>
   <li>Point array to register updates to the character</li>
-  <li><strong>V2 additions</strong></li>
-  <li>Fade out music at game end</li>
-  <li>Floating text message based on game status</li>
+  <li>Swapping of characters</li>
+  <li>"RISK" tile point allows some randomness in point attainment</li>
+  <li>Movement and tile sounds, background music</li>
 </ul>
 </li>
 
 <li><strong>Prototype Postmortem:</strong>
   <li>Things learned</li>
   <ul>
-    <li>How to make a tilemap</li>
-    <li>How to track user move in a "tile" environment</li>
-    <li>How to build collision off a tilemap</li>
-    <li>How to create my on spritesheet</li>
-    <li><strong>V2 additions</strong></li>
-    <li>Music fadein</li>
-    <li>How do get a sprite to fit in between tilemaps</li>
-    <li>The best way to use a timer in the game</li>
-    <li>How to colorize images</li>
+    <li>How to make a tilemap with much larger tiles and to use more complex bitmaps</li>
+    <li>How to create a permissible movement array to emulate collisions with static x,y updates</li>
+    <li>How to swap sprites with x,y updates</li>
   </ul>
   <li>Easiest or hardest thing</li>
   <ul>
-    <li>Absolutely the hardest thing was the collision map between the tilemap and the character - it plagued me for hours</li>
-    <li>Another challenge was importing the tilemap from Tiled to Phaser</li>
-    <li><strong>V2 additions</strong></li>
-    <li>Hardest thing: How to fix the "tight" squeeze plagueing the character sprite and tilemap</li>
-    <li>Easiest: Music fade-out</li>
+    <li> This game has been a challenge for several reasons.  The first rose from my attempt to create a tilemap based board game that had better movement than the first (Dog Walker) game.  This let me down the path of implementing movement with static x,y updates (instead of "velocity" type movements).  ALthough this provides exact movement it prevents the use of collision because the sprits are "moving" into others but effectively teleport.  This was solved by laboriously mapping each tile location to an array and marking which are valid tiles for movement.  Another issue I encountered was swapping sprite locations based on the tile locations.  Though the location swap was pretty straightforward, gaurding the process to only occur once in a move took some ingenuity.</li>
+    <li>Another challenge IS (some race cases seems to plaque the gameplay) ensuring accurate teleportation - occasions occur where the event doesn't trigger :(</li>
+    <li>Applying sounds to movement is REALLY easy in Phaser</li>
   </ul>
 </li>
 
 <li><strong>Prototype Assets:</strong>
 Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
 <ul>
-  <li class="c5"><span>Colored grass - &nbsp;</span><span class="c3"><a class="c4" href="https://www.google.com/url?q=https://forums.rpgmakerweb.com/index.php?threads/whtdragons-tilesets-addons-fixes-and-more.60504/&amp;sa=D&amp;ust=1522956488584000">https://forums.rpgmakerweb.com/index.php?threads/whtdragons-tilesets-addons-fixes-and-more.60504/</a></span></li><li class="c5"><span>Ground &amp; Dogs &amp; Cats, Chairs - </span><span class="c3"><a class="c4" href="https://www.google.com/url?q=https://forums.rpgmakerweb.com/index.php?threads/whtdragons-tilesets-addons-fixes-and-more.60504/&amp;sa=D&amp;ust=1522956488585000">https://forums.rpgmakerweb.com/index.php?threads/whtdragons-tilesets-addons-fixes-and-more.60504/</a></span></li><li class="c5"><span>Alternate Dogs (dark) - </span><span class="c3"><a class="c4" href="https://www.google.com/url?q=https://vxresource.files.wordpress.com/2010/02/gallery_6129_38_17945.png&amp;sa=D&amp;ust=1522956488585000">https://vxresource.files.wordpress.com/2010/02/gallery_6129_38_17945.png</a></span></li><li class="c5"><span>Animals - </span><span class="c3"><a class="c4" href="https://www.google.com/url?q=https://www.pinterest.com/pin/471259548485475327/&amp;sa=D&amp;ust=1522956488586000">https://www.pinterest.com/pin/471259548485475327/</a></span></li><li class="c5"><span>Person - </span><span class="c3"><a class="c4" href="https://www.google.com/url?q=http://momope8.blog67.fc2.com/blog-entry-321.html?sp&amp;sa=D&amp;ust=1522956488586000">http://momope8.blog67.fc2.com/blog-entry-321.html?sp</a></span></li><li class="c5"><span>BoxBack.png &amp; Ok.png - </span><span class="c3"><a class="c4" href="https://www.google.com/url?q=https://phasergames.com/phaser/examples/messageBox/&amp;sa=D&amp;ust=1522956488587000">https://phasergames.com/phaser/examples/messageBox/</a></span></li>
-  <li><strong>V2 additions</strong></li>
-  <li>Music: <a class="c4" href="https://www.bensound.com">https://www.bensound.com</a></li>
-  <li>Stars Image: <a class="c4" href="https://uapcorporate.com/3-star-security-bsi-kitemark-explained/">/https://uapcorporate.com/3-star-security-bsi-kitemark-explained/</a></li>
-  <li>Music: <a class="c4" href="https://www.bensound.com">https://www.bensound.com</a></li>
+  <li class="c5"><span>Colored grass - &nbsp;</span><span class="c3"><a class="c4" href="https://freesound.org/people/Robinhood76/packs/11394/">Score Tile, Finish and swap sounds</a></span></li>
+  <li class="c5"><span>Music - &nbsp;</span><span class="c3"><a class="c4" href="https://www.bensound.com">Music</a></span></li>
 
+  <li class="c5"><span>Sounds - &nbsp;</span><span class="c3"><a class="c4" href="https://www.google.com/url?q=https://forums.rpgmakerweb.com/index.php?threads/whtdragons-tilesets-addons-fixes-and-more.60504/&amp;sa=D&amp;ust=1522956488584000">https://forums.rpgmakerweb.com/index.php?threads/whtdragons-tilesets-addons-fixes-and-more.60504/</a></span></li>
 </ul>
 </li>
 
@@ -95,7 +84,7 @@ Did you make your prototype assets from scratch? Did you borrow them? Cite your 
 State which input, randomness, genre, and play style you used in this prototype.
 <ul>
 <li>Input: Keyboard</li>
-<li>Randomness: Dog is chosen by random - variety difficulty</li>
+<li>Randomness: Swapping is decided by opponenets - RISK tiles offer bonus points at player risk</li>
 <li>Genre: Roleplaying,  Life simulation</li>
 </ul>
 </li>
@@ -105,20 +94,27 @@ State which input, randomness, genre, and play style you used in this prototype.
 </li>
 
 <li><strong>Player Experience Goals:</strong>
-  Players will hopefully enjoy the variation of dog walking challenges and the rewarding (or lack thereof) commentary at the end.  Dog status HAS been included to facilitate players until a better indicator mechanism can be provided. <strong>V2 Update:</strong> Hoping that the additional refinements will make the game more enjoyable to play.
+  Players will hopefully enjoy the analogies of a Friday School Night. 
 </li>
 
 <li><strong>Gameplay:</strong>
   <p>
-  Gameplay here is pretty simple.  The user is provided a dog to walk, and the dog has three core needs that revolve around Energy, Aggressiveness and Potty needs.  The user then must attempt to optimally find a path the satisfy the needs while not over stimulating the dog.  The closer to exactly what the dog requires the user gets, the better they perform.  The coremechanic is simply walking around the path provided on the board game.  However, the challeng will be to find an optimal path.  
+    The concept of this game is simple.  You are a student, and Friday Night has finally come.  You have options tonight - you can either Party (the pink path and score tiles), Work (the green path and score tiles) or study (the blue path and score tiles).
+
+    You gain points but landing on score or Risk tiles.  The score tiles will always give points, and the more you get in a specific type, the more points it awards.  Think of it like added gains by "focusing" on a particular task.  You will get, 1, then 2, then 4 and 8 points for each type of score tile you land on. RISK tiles give you a chance at obtaining points from paths other than the one you're on BUT they run a risk.  If you roll a 1-2 on a 1d6, you get BONUS points, but 3-6 will subtract points!!! 
+
+    SWAP tiles let you be crafty and switch positions with the other player.  Once a player uses a SWAP tile they cannot use it again.  
+
+    The first person to finish will terminate the game and the current points will determine who wins!
+  </p>
 </li>
 
 <li><strong>Strategies:</strong>
-  <p>Determine what the dog needs, and find the best starting point to facilitate your best "walk".  Careful though - if you take too long the dog will have to go to the bathroom more than he originally did!</p>
+  <p>Players will have to determine which path to persue, forcing some strategy with SWAPs and randomness with high risk, high rewards in the RISK tiles</p>
 </li>
 
 <li><strong>Story/Setting/Premise:</strong>
-  Simple backstory: Lots of people walk dogs all the time.  How good are they at guessing their dogs needs?  Dramatic tensions are minimal here, other than the irritation that might ensue at not satisfying your dogs needs.
+  Simple backstory - one all students are familiar with: balancing social, financial, and school obligations.  THis one has the twist of pitting your will (or wit) agains an opponent.
 </li>
 
 <li><strong>Target Audience:</strong>
@@ -126,7 +122,7 @@ State which input, randomness, genre, and play style you used in this prototype.
 </li>
 
 <li><strong>Play Time:</strong>
-  Variable.  < 5 seconds to 5+ minutes
+  Variable.  < 30 seconds to 5+ minutes
 </li>
 
 </ul>

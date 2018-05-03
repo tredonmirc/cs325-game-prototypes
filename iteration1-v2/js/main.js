@@ -126,16 +126,6 @@ function create() {
     music = game.add.audio('background_music');
     music.volume = .2;
 
-    //player.debug = true;
-    /*
-    player.animations.add('left', [8,9], 10, true);
-    player.animations.add('right', [1,2], 10, true);
-    player.animations.add('up', [11,12,13], 10, true);
-    player.animations.add('down', [4,5,6], 10, true);
-    */
-
-
-    //player.body.setSize(16,16, 1, 1);
     game.camera.follow(player);
 
     cursors = game.input.keyboard.createCursorKeys();
